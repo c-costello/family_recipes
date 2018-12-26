@@ -42,3 +42,10 @@ app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
 });
 //function calls
+app.get('/', getHomePage);
+
+
+//index functions
+function getHomePage(req, res){
+  res.render('pages/index.ejs');
+}
