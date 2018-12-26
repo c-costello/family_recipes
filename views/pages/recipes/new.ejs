@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../layout/head.ejs') %>
+  <body>
+    <%- include('../../layout/header.ejs') %>
+    <main>
+    <form action="/new" method="POST">
+      <lable> Title
+        <input type="text" name="title"/>
+      </lable>
+      <lable> Description
+        <input type="text" name="desciption"/>
+      </lable>
+      <lable> Ingredients
+        <input type="text" name="ingredient"/>
+        <input type="text" name="ingredient"/>
+        <input type="text" name="ingredient"/>
+        <input type="text" name="ingredient"/>
+        <input type="text" name="ingredient"/>
+      </lable>
+      <lable> Instructions
+        <input type="text" name="instructions"/>
+        <input type="text" name="instructions"/>
+        <input type="text" name="instructions"/>
+        <input type="text" name="instructions"/>
+        <input type="text" name="instructions"/>
+      </lable>
+      <lable> Name
+        <input type="text" name="created_by"/>
+      </lable>
+      <lable> Source
+        <input type="text" name="course"/>
+      </lable>
+      <button>Submit</button>
+    </form>
+    </main>
+    <%- include('../../layout/footer.ejs') %>
+  </body>
+</html>
