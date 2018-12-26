@@ -7,12 +7,11 @@ CREATE TABLE recipes(
   title VARCHAR(255),
   description TEXT,
   created_by VARCHAR(255),
-  source VARCHAR (255),
-
+  source VARCHAR (255)
 );
 CREATE TABLE instructions(
   id SERIAL PRIMARY KEY,
-  step_number NUMERIC(0,4),
+  step_number INT,
   instruction TEXT,
   recipe_id INTEGER NOT NULL,
   FOREIGN KEY (recipe_id) REFERENCES recipes (id)
@@ -20,7 +19,7 @@ CREATE TABLE instructions(
 
 CREATE TABLE ingredients(
   id SERIAL PRIMARY KEY,
-  ingredient_number NUMERIC(0,4),
+  ingredient_number INT,
   ingredients TEXT,
   recipe_id INTEGER NOT NULL,
   FOREIGN KEY (recipe_id) REFERENCES recipes (id)
