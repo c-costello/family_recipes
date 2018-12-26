@@ -45,7 +45,7 @@ app.listen(PORT, () => {
 app.get('/', getHomePage);
 app.get('/new', getNewRecipe);
 app.post('/new', saveNewRecipe);
-
+app.get('/allrecipes', getSavedRecipes);
 
 //index functions
 function getHomePage(req, res){
@@ -68,5 +68,21 @@ function saveNewRecipe(req, res){
   let values = [title, description, created_by, source];
   client
     .query(SQL, values)
-    .then(res.redirect('/new'))
+    .then(res.redirect('/allrecipes'))
 }
+
+//view recipes functions
+function getSavedRecipes(req, res){
+  console.log('getSavedRecipes is firing')
+  let SQL = `SELECT * FROM recipes`
+  return client.query(SQL)
+  .then( results => {
+    res.render('../views/pages/recipes/savedrecipes.ejs', { savedRecipes: results.rows })
+  })
+}
+
+
+
+
+
+
