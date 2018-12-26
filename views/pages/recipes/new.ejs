@@ -11,19 +11,17 @@
       <lable> Description
         <input type="text" name="description"/>
       </lable>
-      <lable> Ingredients
+      <lable class="ingredients-label"> Ingredients
         <input type="text" name="ingredient"/>
         <input type="text" name="ingredient"/>
         <input type="text" name="ingredient"/>
-        <input type="text" name="ingredient"/>
-        <input type="text" name="ingredient"/>
+        <input type="button" class="add-button ingredients-button" onclick="addIngredients()" value="+ Ingredient">
       </lable>
       <lable> Instructions
         <input type="text" name="instructions"/>
         <input type="text" name="instructions"/>
         <input type="text" name="instructions"/>
-        <input type="text" name="instructions"/>
-        <input type="text" name="instructions"/>
+        <input type="button" class="add-button instructions-button" onclick="addInstructions()" value="+ Instructions">
       </lable>
       <lable> Name
         <input type="text" name="created_by"/>
@@ -31,7 +29,7 @@
       <lable> Source
         <input type="text" name="sourse"/>
       </lable>
-      <button>Submit</button>
+      <button type="submit">Submit</button>
     </form>
     </main>
     <%- include('../../layout/footer.ejs') %>
