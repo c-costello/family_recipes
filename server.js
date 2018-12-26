@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 
 //set PORT
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 //set static root
 app.use(express.urlencoded({ extended: true }));
