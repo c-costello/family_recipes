@@ -4,13 +4,15 @@
     <body>
       <%- include('../../layout/header.ejs') %>
       <main>
-      <% savedRecipes.forEach( recipe => { %>
-        <h3> <%= recipe.title %> </h3>
-        <p> <%= recipe.description %> </p>
-        <p> <%= recipe.created_by %> </p>
-        <p> <%= recipe.source %> </p>
-
-      <% }) %>
+        <% savedRecipes.forEach( recipe => { %>
+          <h3> <%= recipe.title %> </h3>
+          <p> Description: <%= recipe.description %> </p>
+          <p> Added By: <%= recipe.created_by %> </p>
+          <p> Source: <%= recipe.source %> </p>
+          <form action="recipe/<%= recipe.id %>" method="GET">
+            <button>View Details</button>
+          </form>
+        <% }) %>
       </main>
       <%- include('../../layout/footer.ejs') %>
     </body>

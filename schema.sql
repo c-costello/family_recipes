@@ -7,7 +7,7 @@ CREATE TABLE recipes(
   title VARCHAR(255),
   description TEXT,
   created_by VARCHAR(255),
-  source VARCHAR (255)
+  source VARCHAR(255)
 );
 CREATE TABLE instructions(
   id SERIAL PRIMARY KEY,
@@ -24,4 +24,12 @@ CREATE TABLE ingredients(
   recipe_id INTEGER NOT NULL,
   FOREIGN KEY (recipe_id) REFERENCES recipes (id)
 );
+
+CREATE TABLE edts(
+  id SERIAL PRIMARY KEY,
+  edited_by VARCHAR(255),
+  edited_on VARCHAR(255),
+  recipe_id INTEGER NOT NULL,
+  FOREIGN KEY (recipe_id) REFERENCES recipes (id)
+)
 
