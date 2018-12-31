@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../layout/head.ejs') %>
+  <body>
+    <%- include('../../layout/header.ejs') %>
+    <main>
+    <form action="/new" method="POST">
+      <lable> Title
+        <input type="text" name="title"/>
+      </lable>
+      <lable> Description
+        <input type="text" name="description"/>
+      </lable>
+      <lable class="ingredients-label"> Ingredients
+        <input type="text" name="ingredient"/>
+        <input type="text" name="ingredient"/>
+        <input type="text" name="ingredient"/>
+        <input type="button" class="add-button ingredients-button" onclick="addIngredients()" value="+ Ingredient">
+      </lable>
+      <lable> Instructions
+        <input type="text" name="instructions"/>
+        <input type="text" name="instructions"/>
+        <input type="text" name="instructions"/>
+        <input type="button" class="add-button instructions-button" onclick="addInstructions()" value="+ Instructions">
+      </lable>
+      <lable> Name
+        <input type="text" name="created_by"/>
+      </lable>
+      <lable> Source
+        <input type="text" name="source"/>
+      </lable>
+      <button type="submit">Submit</button>
+    </form>
+    </main>
+    <%- include('../../layout/footer.ejs') %>
+  </body>
+</html>
